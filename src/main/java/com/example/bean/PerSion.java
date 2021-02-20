@@ -5,13 +5,31 @@ import java.util.Objects;
 public class PerSion {
     private String name;
     private Integer age;
+    private String code;
 
     public PerSion() {
+        System.out.println("无参构造");
     }
 
-    public PerSion(String name, int age) {
+    public PerSion(String name, Integer age) {
+        System.out.println("有参构造1");
         this.name = name;
         this.age = age;
+    }
+
+    public PerSion(String name, Integer age, String code) {
+        System.out.println("有参构造2");
+        this.name = name;
+        this.age = age;
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
@@ -42,5 +60,11 @@ public class PerSion {
     @Override
     public int hashCode() {
         return name.hashCode()+age.hashCode();
+    }
+
+
+    private String addUser(String name){
+
+        return name +"岁";
     }
 }
