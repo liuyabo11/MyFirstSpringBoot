@@ -1,6 +1,5 @@
 package com.example.proxy.jdk.youhua;
 
-import com.example.reflecx.JavaClassLoader;
 
 import java.lang.reflect.Method;
 
@@ -21,10 +20,13 @@ public class MyJdkInvocationHandler implements MayiktJdkInvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        return method.invoke(target,args);
+        System.out.println("使用Jdk动态代理打印日志开始" + args[0]);
+        Object result = method.invoke(target, args);
+        System.out.println("使用Jdk动态代理打印日志结束" + args[1]);
+        return result;
     }
 
     public <T> T getProxy(){
-        return (T) MyProxy.newProxyInstance((JavaClassLoader) target.getClass().getClassLoader(),target.getClass().getInterfaces()[0],this);
+        return (T) MyProxy.newProxyInstance(new JavaClassLoader(),target.getClass().getInterfaces()[0],this);
     }
 }
