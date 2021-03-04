@@ -78,6 +78,10 @@ public class MyProxy {
 
         }
         return proxyMe;
+//        Class<MyProxy> myProxyClass = MyProxy.class;
+//        Class<?> aClass = Class.forName("");
+//        MyProxy myProxy = new MyProxy();
+//        Class<? extends MyProxy> aClass1 = myProxy.getClass();
     }
 
     ;

@@ -3,6 +3,8 @@ package com.example.test;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPObject;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Test001 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         double b = 0.01;
         double a = 11.01;
         Double data1 = new Double(a);
@@ -32,5 +34,12 @@ public class Test001 {
 
         BigDecimal c = new BigDecimal("1");
 //        System.out.println(JSONObject);
+
+        TradePo trade = new TradePo();
+        trade.setAmount(new Double("1"));
+
+        System.out.println(JSON.toJSONString(trade));
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        System.out.println(objectMapper.writeValueAsString(trade));
     }
 }

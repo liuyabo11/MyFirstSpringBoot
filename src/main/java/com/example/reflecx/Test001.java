@@ -34,6 +34,7 @@ public class Test001 {
 
         //通过反射调用方法
         Method add = aClass.getDeclaredMethod("addUser", String.class);
+        System.out.println(add.getReturnType());
         System.out.println(add.getReturnType().getSimpleName());
         System.out.println(add.getName());
         add.setAccessible(true);

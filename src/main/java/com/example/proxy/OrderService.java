@@ -6,7 +6,7 @@ package com.example.proxy;
  * @create 2021/2/19 16:28
  */
 public interface OrderService {
-    String addOrder(String orderId,String orderName) throws Exception;
+    String addOrder(String orderId,String orderName);
 
     /*String addOrder1(String orderId,String orderName);*/
 }
